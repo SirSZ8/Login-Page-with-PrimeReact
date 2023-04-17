@@ -5,6 +5,8 @@ import { Card } from "primereact/card";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 
+import { Image } from "primereact/image";
+
 const LoginPage = () => {
   const [user, setUser] = useState({});
 
@@ -17,11 +19,21 @@ const LoginPage = () => {
   return (
     <>
       <div className="h-screen flex justify-content-center align-items-center">
-        <Card title="Login">
-          <div className="grid">
-            <div className="field col-12 md:col-12 p-inputgroup">
+        <Card className="my-4">
+          <div className="card flex justify-content-center">
+            <Image
+              src="https://primefaces.org/cdn/primereact/images/galleria/galleria7.jpg"
+              alt="Image"
+              width="400"
+              height="200"
+            />
+          </div>
+          <div className="card">
+            <h2>Login</h2>
+            <div className="field col-12 md:col-12 mb-0 p-input">
               <label className="col-12 mb-2 md:col-2 md:mb-0">Email</label>
               <InputText
+                className="w-full"
                 name="email"
                 isInvalid={!user.email}
                 isValid={user.email}
@@ -31,9 +43,10 @@ const LoginPage = () => {
                 placeholder="Email"
               />
             </div>
-            <div className="field col-12 md:col-12 p-inputgroup">
+            <div className="field col-12 md:col-12 p-input">
               <label className="col-12 mb-2 md:col-2 md:mb-0">Password</label>
               <InputText
+                className="w-full"
                 name="password"
                 isInvalid={!user.password}
                 isValid={user.password}
